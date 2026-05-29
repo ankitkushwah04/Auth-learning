@@ -1,0 +1,74 @@
+<div class="login-container">
+  <div class="login-card">
+    <h2 class="title">Login</h2>
+
+    <form>
+      <!-- Error messages -->
+      <div class="error-box" *ngIf="errorMsg.length">
+        <p *ngFor="let msg of errorMsg">{{ msg }}</p>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email address</label>
+        <input
+          [(ngModel)]="authRequest.email"
+          name="email"
+          id="email"
+          type="email"
+          placeholder="Enter email"
+          required
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input
+          [(ngModel)]="authRequest.password"
+          name="password"
+          id="password"
+          type="password"
+          placeholder="Enter password"
+          required
+        />
+      </div>
+
+      <button id="login" type="button" class="btn-primary" (click)="login()">
+        Login
+      </button>
+
+      <div class="divider"></div>
+
+<div class="social-login">
+  <p>Login with Social Handles!</p>
+
+  <div class="social-buttons">
+    <button
+      type="button"
+      class="btn-primary"
+      (click)="loginByOauth2('google')"
+    >
+      Login with Google
+    </button>
+
+    <button
+      type="button"
+      class="btn-primary"
+      (click)="loginByOauth2('github')"
+    >
+      Login with Github
+    </button>
+  </div>
+</div>
+
+
+      <div class="divider"></div>
+
+      <p class="register-text">
+        Don’t have an account?
+        <button type="button" class="link-btn" (click)="register()">
+          Register
+        </button>
+      </p>
+    </form>
+  </div>
+</div>

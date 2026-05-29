@@ -1,0 +1,75 @@
+<div class="register-container">
+  <div class="register-card">
+    <h2 class="title">AUTH</h2>
+
+    <p class="subtitle">
+      Let's <span>Register</span> to <strong>AUTH!</strong>
+    </p>
+
+    <form>
+      <!-- Error Messages -->
+      <div class="error-box" *ngIf="errorMsg.length">
+        <p *ngFor="let msg of errorMsg">{{ msg }}</p>
+      </div>
+
+      <div class="form-group">
+        <label for="firstname">Firstname</label>
+        <input
+          [(ngModel)]="registrationRequest.firstname"
+          name="firstname"
+          id="firstname"
+          type="text"
+          placeholder="Enter firstname"
+          required
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="lastname">Lastname</label>
+        <input
+          [(ngModel)]="registrationRequest.lastname"
+          name="lastname"
+          id="lastname"
+          type="text"
+          placeholder="Enter lastname"
+          required
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input
+          [(ngModel)]="registrationRequest.email"
+          name="email"
+          id="email"
+          type="email"
+          placeholder="Enter email"
+          required
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input
+          [(ngModel)]="registrationRequest.password"
+          name="password"
+          id="password"
+          type="password"
+          placeholder="Enter password"
+          required
+        />
+      </div>
+
+      <button type="button" class="btn-primary" (click)="register()">
+        Create account
+      </button>
+
+      <div class="divider"></div>
+
+      <p class="login-text">
+        Already have an account?
+        <button type="button" class="link-btn" (click)="login()">Login</button>
+      </p>
+    </form>
+  </div>
+</div>

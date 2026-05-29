@@ -1,0 +1,51 @@
+<!-- Activation Result -->
+<div class="page-center" *ngIf="submitted; else codeForm">
+  <div class="activation-card">
+    <!-- Success -->
+    <div *ngIf="isOkay; else activationError">
+      <h2 class="success-title">Activation Successful!</h2>
+      <p class="message-text">
+        Your account has been successfully activated.
+      </p>
+      <button class="btn-success" (click)="redirectToLogin()">
+        Go to Login
+      </button>
+    </div>
+
+    <!-- Error -->
+    <ng-template #activationError>
+      <h2 class="error-title">Activation Failed!</h2>
+      <p class="message-text">{{ message }}</p>
+      <button class="btn-error" (click)="submitted = false">
+        Try Again
+      </button>
+    </ng-template>
+  </div>
+</div>
+
+<!-- Activation Code Form -->
+<ng-template #codeForm>
+  <div class="page-center">
+    <div class="activation-card large">
+      <h2 class="title">Enter Your Activation Code</h2>
+
+      <p class="info-text">
+        We’ve sent a 6-digit code to your email.
+        Please enter it below to activate your account.
+      </p>
+
+      <div class="code-input-container">
+        <code-input
+          [isCodeHidden]="false"
+          [codeLength]="6"
+          [code]="'number'"
+          (codeCompleted)="onCodeCompleted($event)">
+        </code-input>
+      </div>
+
+      <button class="btn-primary" (click)="redirectToLogin()">
+        Go to Login
+      </button>
+    </div>
+  </div>
+</ng-template>

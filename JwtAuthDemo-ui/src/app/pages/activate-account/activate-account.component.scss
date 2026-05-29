@@ -1,0 +1,98 @@
+/* Page center */
+.page-center {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+}
+
+/* Card */
+.activation-card {
+  width: 100%;
+  max-width: 420px;
+  background: #ffffff;
+  padding: 36px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+.activation-card.large {
+  max-width: 600px;
+}
+
+/* Titles */
+.title {
+  color: #2563eb;
+  margin-bottom: 16px;
+}
+
+.success-title {
+  color: #16a34a;
+  margin-bottom: 12px;
+}
+
+.error-title {
+  color: #dc2626;
+  margin-bottom: 12px;
+}
+
+/* Text */
+.message-text,
+.info-text {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 24px;
+}
+
+/* Code input wrapper */
+.code-input-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 28px;
+}
+
+/* Buttons */
+button {
+  padding: 12px 24px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: #2563eb;
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  background-color: #1e40af;
+}
+
+.btn-success {
+  background-color: #16a34a;
+  color: #ffffff;
+}
+
+.btn-success:hover {
+  background-color: #15803d;
+}
+
+.btn-error {
+  background-color: #dc2626;
+  color: #ffffff;
+}
+
+.btn-error:hover {
+  background-color: #b91c1c;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .activation-card {
+    padding: 24px;
+  }
+}
